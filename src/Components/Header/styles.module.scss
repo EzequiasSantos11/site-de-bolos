@@ -1,0 +1,136 @@
+.container{
+  display: flex;
+  height: 5rem;
+  left: 0;
+  right: 0;
+  align-items: center;
+  justify-content: space-around;
+  position: fixed;
+  z-index: 99999;
+  .logo{
+    display: flex;
+    align-items: center;
+    h1{
+      color: #fff;
+    }
+    img{
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+  }
+  .menuIcon{
+    display: none;
+  }
+  nav, ul{
+    display: flex;
+  }
+  ul{
+    li{
+      a{
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin: 0 10px;
+        color: #fff;
+      }
+    }
+  }
+}
+.noVisible{
+  background: brown;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+@media (max-width: 500px) {
+  .container{
+    .notVisible{
+      display: none;
+    }
+    .visibleBack{
+      display: flex;
+      position: fixed;
+      height: 100vh;
+      left: 0;
+      right: 0;
+      top: 0;
+      z-index: 999;
+      background: rgba(0,0,0,0.4);
+    }
+    nav{
+      justify-content: flex-end;
+      align-items: flex-start;
+      position: fixed;
+      top: 5rem;
+      right: -50rem;
+      width: 50%;
+      height: 50%;
+      border-bottom-left-radius: 20px;
+      transition: all .4s ease;
+      background: brown;
+      z-index: 999;
+      ul{
+        height: 100%;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        li{
+          width: 90%;
+          height: 100%;
+          margin: 0 auto;
+          a{
+            display: flex;
+            height: 100%;
+            width: 100%;
+            align-items: center;
+          }
+        }
+      }
+    }
+    .menuIconClose{
+      display: flex;
+      flex-direction: column;
+      width: 50px;
+      position: relative;
+      span{
+        width: 100%;
+        height: 5px;
+        background: #fff;
+        margin: 3px 0;
+      }
+    }
+    .menuIcon{
+      display: flex;
+      flex-direction: column;
+      width: 50px;
+      position: relative;
+      span{
+        width: 100%;
+        height: 5px;
+        background: #fff;
+        margin: 3px 0;
+      }
+      .line1{
+        transform: rotate(40deg);
+        position: absolute;
+        transition: all .4s ease-in-out;
+        z-index: 9999;
+      }
+      .line2{
+        opacity: 0;
+      }
+      .line3{
+        transform: rotate(-40deg);
+        position: absolute;
+        transition: all .4s ease-in-out;
+        z-index: 9999;
+      }
+    }  
+    .visible{
+      right: 0;
+    }
+  }
+}
