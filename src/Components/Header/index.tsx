@@ -9,7 +9,7 @@ export function Header({ headerScroll }:HeaderType) {
     <div className={Styles.container}>
       <header className={headerScroll ? Styles.noVisible : Styles.container}>
         <div className={Styles.logo}>
-          <img src="/assets/bolo-cenoura-bis.png" alt="imagem de logo, um bolo de cenoura." />
+          <img src="/assets/confeiteira.jpg" alt="imagem de logo, um bolo de cenoura." />
           <h1>Dani's cakes</h1>
         </div>
         <div className={showMenu ? Styles.menuIcon : Styles.menuIconClose} onClick={()=>setShowMenu(!showMenu)}>
@@ -17,7 +17,7 @@ export function Header({ headerScroll }:HeaderType) {
           <span className={showMenu ? Styles.line2 : Styles.line}></span>
           <span className={showMenu ? Styles.line3 : Styles.line}></span>
         </div>
-        <div className={showMenu ? Styles.visibleBack : Styles.notVisible}></div>
+        <div onClick={()=>setShowMenu(false)} className={showMenu ? Styles.visibleBack : Styles.notVisible}></div>
         <nav className={showMenu ? Styles.visible : ""}>
           <ul>
             <li onClick={()=>setShowMenu(false)}>
