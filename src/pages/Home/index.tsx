@@ -26,7 +26,12 @@ export function Home(){
         </div>
         <div className="text">
           <h2>Seja de manhã ou a tarde, café com <span>bolo caseiro</span> é sempre a melhor pedida! <strong>🥰🥰🥰</strong></h2>
-          <button>Pedir agora</button>
+          <a className="button" target={"_blank"} href="https://api.whatsapp.com/send?phone=5538998060266">
+            <button>
+              <img src="/assets/whatsapp.svg" alt="icone do whatsapp" />
+              Pedir agora
+            </button>
+          </a>
         </div>
         <div className='amostra'>
           <img src="" alt="" />
