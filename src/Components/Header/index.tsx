@@ -29,9 +29,6 @@ export function Header({ headerScroll }:HeaderType) {
             <li onClick={()=>setShowMenu(false)}>
               <a href="#sobre">Sobre</a>
             </li>
-            <li onClick={()=>setShowMenu(false)}>
-              <a href="#contatos">Contatos</a>
-            </li>
           </ul>
         </nav>
       </header>
