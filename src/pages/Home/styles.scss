@@ -1,40 +1,46 @@
-#home{
+#home {
   justify-content: center;
   align-items: center;
   position: relative;
   padding: 0;
-  .imageBack{
+
+  .imageBack {
     filter: blur(3px);
     margin-top: -10px;
   }
-  .imageBack, .backImage{
+
+  .imageBack,
+  .backImage {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     object-fit: cover;
     width: 100%;
-    height: 95%;
+    height: 100%;
     z-index: -2;
     opacity: .6;
     background-image: radial-gradient(circle at 10px -15px, transparent 20px, rgba(237, 30, 30, 1) 21px);
   }
-  .backImage{
+
+  .backImage {
     z-index: -1;
     background: #ed8191;
     opacity: .7;
-    svg{
+
+    svg {
       height: 30px;
       width: 100%;
       bottom: 0;
       right: 0;
       position: absolute;
       transform: scale(-1);
-      fill: #fff;
+      fill: rgba(255, 192, 203, 0.31);
       z-index: 9998;
     }
   }
-  .text{
+
+  .text {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -43,7 +49,8 @@
     width: 60%;
     margin-top: -30px;
     z-index: 9999;
-    h2{
+
+    h2 {
       color: #FFFFFF;
       font-family: "Montserrat", Sans-serif;
       font-size: 2rem;
@@ -51,40 +58,216 @@
       text-transform: uppercase;
       line-height: 1.2em;
     }
-    .button{
-      button{
-        cursor: pointer;
-        height: 50px;
-        width: 50%;
-        margin-top: 40px;
-        border-radius: 20px;
-        border: 2px solid brown;
-        background: #ed8a81;
+
+    .button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50%;
+      cursor: pointer;
+      height: 50px;
+      margin-top: 40px;
+      border-radius: 20px;
+      border: 2px solid brown;
+      background: #ed8a81;
+      font-size: 1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      box-shadow: 0 5px rgba(0, 0, 0, 0.2);
+
+      a {
+        display: flex;
+        align-items: center;
         color: #fff;
-        font-size: 1.5rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        box-shadow: 0 5px rgba(0,0,0,0.2);
-        &:active{
+
+        &:active {
           box-shadow: none;
-          box-shadow: 0 0 8px 0 rgba(0,0,0,0.4);
-        
+          box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.4);
+
+        }
+
+        img {
+          height: 30px;
+          margin-right: 10px;
         }
       }
+
+      @media (max-width: 800px) {
+        width: 100%;
+      }
     }
-    span{
+
+    span {
       color: brown;
     }
   }
- 
+
 }
 
- 
+#cardapio {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding-top: 7rem;
+  background: rgba(255, 192, 203, 0.31);
+  h2 {
+    font-size: 3rem;
+    font-weight: 800;
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+    color: #3099;
+  }
 
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 6rem;
+    margin-bottom: 80px;
 
-@media (max-width: 800px){
-  #home{
-    .text{
+    .card {
+      display: flex;
+      height: 350px;
+      width: 100%;
+      margin-bottom: 150px;
+      background: rgba(255, 192, 203, 0.32);
+      border-radius: 10px;
+      img {
+        width: 50%;
+        height: 100%;
+        border-radius: 10px;
+        object-fit: cover;
+      }
+      
+      .textCard {
+        width: 60%;
+        h3 {
+          color: black;
+          font-size: 46px;
+          width: 80%;
+          margin: 0 auto;
+          margin-top: 1.8rem;
+          font-weight: 800;
+        }
+
+        p,
+        a {
+          font-size: 16px;
+          width: 80%;
+          margin: 20px auto;
+          color: black;
+          font-weight: 400;
+        }
+
+        a {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 50%;
+          font-size: 18px;
+          text-decoration: underline;
+          padding: 10px;
+          padding-left: 15px;
+          border: 1px solid rgba(165, 42, 42, 0.637);
+          border-radius: 20px;
+          display: flex;
+          text-align: center;
+          color: blue;
+        }
+      }
+    }
+  }
+  @media (max-width: 926px) {
+    .wrapper{
+      .card{
+        justify-content: center;
+        align-items: center;
+        .textCard{
+          h3{
+            font-size: 22px;
+          }
+          p,a{
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 800px) {
+    padding-top: 6rem;
+
+    h2 {
+      font-size: 25px;
+    }
+
+    .wrapper {
+      .card {
+        height: 100%;
+        flex-direction: column;
+        position: relative;
+        padding-top: 50%;
+
+        .textCard {
+          width: 100%;
+          height: 100%;
+
+          h3 {
+            font-size: 25px;
+          }
+
+          p {
+            margin: 1rem auto;
+            justify-content: stretch;
+          }
+        }
+
+        img {
+          position: absolute;
+          top: 0;
+          width: 100%;
+          height: 45%;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 445px) {
+    h2 {
+      font-size: 20px;
+      width: 90%;
+    }
+
+    .wrapper {
+      .card {
+        img {
+          height: 30%;
+        }
+
+        .textCard {
+          h3 {
+            font-size: 18px;
+          }
+
+          p {
+            font-size: 14px;
+          }
+
+          a {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  #home {
+    .text {
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
@@ -92,7 +275,8 @@
       width: 90%;
       margin-top: -30px;
       z-index: 9999;
-      h2{
+
+      h2 {
         color: #FFFFFF;
         font-family: "Montserrat", Sans-serif;
         font-size: 2rem;
@@ -100,9 +284,11 @@
         text-transform: uppercase;
         line-height: 1.2em;
       }
-      .button{
+
+      .button {
         width: 70%;
-        button{
+
+        button {
           display: flex;
           align-items: center;
           justify-content: center;
@@ -117,17 +303,20 @@
           font-size: 1.5rem;
           font-weight: 700;
           text-transform: uppercase;
-          box-shadow: 0 8px rgba(0,0,0,0.2);
-          &:active{
+          box-shadow: 0 8px rgba(0, 0, 0, 0.2);
+
+          &:active {
             box-shadow: none;
-            box-shadow: 0 0 8px 0 rgba(0,0,0,0.4);
+            box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.4);
           }
-          img{
+
+          img {
             margin-right: 10px;
           }
         }
       }
-      span{
+
+      span {
         color: brown;
       }
     }
